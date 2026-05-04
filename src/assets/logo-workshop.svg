@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 160" fill="none">
+  <defs>
+    <linearGradient id="gold-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFDF73" />
+      <stop offset="40%" stop-color="#D4AF37" />
+      <stop offset="60%" stop-color="#AA7C11" />
+      <stop offset="100%" stop-color="#8A6308" />
+    </linearGradient>
+    <linearGradient id="gold-line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="transparent" />
+      <stop offset="20%" stop-color="#D4AF37" />
+      <stop offset="80%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="transparent" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- WORKSHOP - Small, white, outlined or thin text -->
+  <text x="50%" y="30" font-family="'Arial Black', sans-serif" font-size="16" font-weight="bold" fill="none" stroke="#fff" stroke-width="0.5" letter-spacing="1.2em" text-anchor="middle" transform="translate(10, 0)">
+    WORKSHOP
+  </text>
+  
+  <!-- Top Gold Line -->
+  <rect x="50" y="45" width="400" height="2" fill="url(#gold-line)" />
+
+  <!-- MÁQUINA DE LUCROS -->
+  <g transform="translate(250, 95)" text-anchor="middle">
+    <!-- MÁQUINA -->
+    <text x="0" y="0" font-family="'Arial Black', sans-serif" font-size="52" font-weight="900" fill="url(#gold-gradient)" letter-spacing="0.05em">
+      MÁQUINA
+    </text>
+    
+    <!-- DE LUCROS line -->
+    <g transform="translate(0, 50)">
+      <text x="-120" y="0" font-family="'Arial Black', sans-serif" font-size="24" font-weight="900" fill="#fff" letter-spacing="0.1em" opacity="0.9">
+        DE
+      </text>
+      <text x="25" y="0" font-family="'Arial Black', sans-serif" font-size="52" font-weight="900" fill="url(#gold-gradient)" letter-spacing="0.05em">
+        LUCROS
+      </text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-border: hsl(var(--border));
+  --color-destructive: hsl(var(--destructive));
+  --radius-lg: var(--radius);
+}
+
+:root {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+  --card: 220 20% 6%;
+  --primary: 39 100% 50%;
+  --primary-foreground: 0 0% 0%;
+  --secondary: 220 20% 12%;
+  --muted-foreground: 220 10% 55%;
+  --border: 220 15% 18%;
+  --destructive: 0 84% 60%;
+  --radius: 0.75rem;
+
+  --neon-glow: 0 0 20px hsla(39, 100%, 50%, 0.4), 0 0 60px hsla(39, 100%, 50%, 0.15);
+  --neon-glow-strong: 0 0 20px hsla(39, 100%, 50%, 0.6), 0 0 80px hsla(39, 100%, 50%, 0.25);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .neon-text {
+    color: hsl(var(--primary));
+    text-shadow:
+      0 0 10px hsl(39 100% 50% / 0.5),
+      0 0 20px hsl(39 100% 50% / 0.3);
+  }
+
+  .neon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #000;
+    background: linear-gradient(135deg, hsl(39 100% 42%), hsl(39 100% 54%));
+    box-shadow: var(--neon-glow);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+  }
+
+  .neon-button:not(:disabled):hover {
+    transform: translateY(-1px);
+    box-shadow: var(--neon-glow-strong);
+  }
+
+  .neon-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: hsl(39 100% 28%);
+    box-shadow: none;
+    color: hsl(0 0% 100% / 0.5);
+  }
+
+  .glass-card {
+    background: linear-gradient(145deg, hsl(220 20% 8% / 0.95), hsl(39 50% 6% / 0.95));
+    border: 1px solid hsl(39 100% 50% / 0.4);
+    border-radius: 2rem;
+    backdrop-filter: blur(20px);
+    box-shadow:
+      0 0 30px hsl(39 100% 50% / 0.12),
+      inset 0 1px 0 hsl(39 100% 50% / 0.08);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .bg-glow {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(circle, hsla(39, 100%, 50%, 0.12) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out both;
+  }
+
+  .fade-in-up-delayed {
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
