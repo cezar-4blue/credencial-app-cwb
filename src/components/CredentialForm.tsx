@@ -4,7 +4,7 @@ import type { FormData } from "../App";
 
 // Cole aqui a URL do seu Google Apps Script publicado
 const WEBHOOK_URL =
-  import.meta.env.VITE_WEBHOOK_URL ||
+  (import.meta as any).env?.VITE_WEBHOOK_URL ||
   "https://script.google.com/macros/s/AKfycbx4RwMeVBooTBF7k5FIbSf51EmlOjWbXPOf9gYEk3xtkAxFzq2TdmFJdLa_JzoNJrPw0g/exec";
 
 interface Props {
